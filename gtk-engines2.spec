@@ -13,8 +13,8 @@
 
 Name:			%{pkgname}%{pkgversion}
 Summary:		Default GTK+ 2.0 theme engines
-Version:		2.10.0
-Release:		%mkrel 3
+Version:		2.10.1
+Release:		%mkrel 1
 License:		GPL
 Group:			System/Libraries
 BuildRequires:		libglade2.0-devel
@@ -124,7 +124,7 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/themes/*/ICON.png \
 
 %files -f %pkgname.lang
 %defattr(-,root,root)
-%doc COPYING NEWS README
+%doc COPYING README ChangeLog
 %{_datadir}/themes/*
 %_datadir/gtk-engines/
 
@@ -132,5 +132,3 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/themes/*/ICON.png \
 %defattr(-,root,root)
 %{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.so
 %{_libdir}/pkgconfig/*
-
-
