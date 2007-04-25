@@ -3,7 +3,7 @@
 %define lib_name %mklibname %{pkgname}%{pkgversion}
 
 %define cleanice_version 2.4.0
-%define xfce_version 2.4.0
+%define xfce_version 2.4.1
 %define wonderland_version 0.47
 %define mist_version 0.5
 
@@ -14,7 +14,7 @@
 Name:			%{pkgname}%{pkgversion}
 Summary:		Default GTK+ 2.0 theme engines
 Version:		2.10.1
-Release:		%mkrel 1
+Release:		%mkrel 2
 License:		GPL
 Group:			System/Libraries
 BuildRequires:		libglade2.0-devel
