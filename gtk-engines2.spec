@@ -14,7 +14,7 @@
 Name:			%{pkgname}%{pkgversion}
 Summary:		Default GTK+ 2.0 theme engines
 Version:		2.11.4
-Release:		%mkrel 1
+Release:		%mkrel 2
 License:		GPL
 Group:			System/Libraries
 BuildRequires:		libglade2.0-devel
@@ -64,7 +64,7 @@ Library files for %{name}
 
 %build
 
-%configure2_5x --enable-lua
+%configure2_5x --enable-lua --enable-animation
 %make
 
 cd gtk-engines-cleanice-%{cleanice_version}/
