@@ -3,7 +3,7 @@
 %define lib_name %mklibname %{pkgname}%{pkgversion}
 
 %define cleanice_version 2.4.0
-%define xfce_version 2.4.1
+%define xfce_version 2.4.2
 %define wonderland_version 0.47
 %define mist_version 0.5
 
@@ -14,7 +14,7 @@
 Name:			%{pkgname}%{pkgversion}
 Summary:		Default GTK+ 2.0 theme engines
 Version:		2.13.0
-Release:		%mkrel 1
+Release:		%mkrel 2
 License:		GPL
 Group:			System/Libraries
 BuildRequires:		libglade2.0-devel
@@ -32,8 +32,8 @@ Requires:		%{lib_name} >= %{version}
 Conflicts:		ximian-artwork < 0.2.26-4mdk
 Conflicts:		gnome-themes <= 2.8.2-2mdk
 Conflicts:		gnome-themes-extras < 0.8.0-3mdk
-Provides:		gtk-theme-clearlooks gtk-xfce-engine 
-Obsoletes:		gtk-theme-clearlooks gtk-xfce-engine 
+Provides:		gtk-theme-clearlooks gtk-xfce-engine
+Obsoletes:		gtk-theme-clearlooks gtk-xfce-engine
 
 %description
 These are the graphical engines for the various GTK+ toolkit themes.
@@ -112,7 +112,7 @@ cd ..
 #remove empty files
 rm -f $RPM_BUILD_ROOT%{_datadir}/themes/*/ICON.png \
   $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.la \
-  $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.a 
+  $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.a
 
 %find_lang %pkgname
 
