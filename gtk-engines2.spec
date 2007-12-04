@@ -13,8 +13,8 @@
 
 Name:			%{pkgname}%{pkgversion}
 Summary:		Default GTK+ 2.0 theme engines
-Version:		2.13.0
-Release:		%mkrel 2
+Version:		2.13.1
+Release:		%mkrel 1
 License:		GPL
 Group:			System/Libraries
 BuildRequires:		libglade2.0-devel
