@@ -124,7 +124,7 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/themes/*/ICON.png \
 
 %files -f %pkgname.lang
 %defattr(-,root,root)
-%doc COPYING README ChangeLog
+%doc COPYING README
 %{_datadir}/themes/*
 %_datadir/gtk-engines/
 
