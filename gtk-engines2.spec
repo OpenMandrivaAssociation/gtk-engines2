@@ -27,7 +27,6 @@ Source5:		http://themes.freshmeat.net/redir/gtk2flat/31385/url_tgz/gtk2flat-defa
 Source7:		Wonderland-%{wonderland_version}.tar.bz2
 Url:			ftp://ftp.gnome.org/pub/GNOME/sources/gtk-engines/
 
-BuildRoot:		%{_tmppath}/%{name}-%{version}-buildroot
 Requires:		%{lib_name} >= %{version}
 Conflicts:		ximian-artwork < 0.2.26-4mdk
 Conflicts:		gnome-themes <= 2.8.2-2mdk
