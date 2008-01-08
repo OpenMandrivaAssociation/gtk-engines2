@@ -13,7 +13,7 @@
 
 Name:			%{pkgname}%{pkgversion}
 Summary:		Default GTK+ 2.0 theme engines
-Version:		2.13.2
+Version:		2.13.3
 Release:		%mkrel 1
 License:		GPL
 Group:			System/Libraries
