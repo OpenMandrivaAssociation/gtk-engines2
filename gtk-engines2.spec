@@ -4,7 +4,7 @@
 
 %define cleanice_version 2.4.0
 %define xfce_version 2.4.2
-%define wonderland_version 0.47
+%define bluecurve_version 1.0.0
 %define mist_version 0.5
 
 %define _requires_exceptions pkgconfig\(.*\)
@@ -14,7 +14,7 @@
 Name:			%{pkgname}%{pkgversion}
 Summary:		Default GTK+ 2.0 theme engines
 Version:		2.13.3
-Release:		%mkrel 1
+Release:		%mkrel 2
 License:		GPL
 Group:			System/Libraries
 BuildRequires:		libglade2.0-devel
@@ -24,7 +24,7 @@ Source0:		http://ftp.gnome.org/pub/GNOME/sources/gtk-engines/%{pkgname}-%{versio
 Source3:		http://prdownloads.sourceforge.net/elysium-project/gtk-engines-cleanice-%{cleanice_version}.tar.bz2
 Source4:		http://www.xfce.org/archive/xfce-4.4.0/gtk-xfce-engine-%{xfce_version}.tar.bz2
 Source5:		http://themes.freshmeat.net/redir/gtk2flat/31385/url_tgz/gtk2flat-default.tar.bz2
-Source7:		Wonderland-%{wonderland_version}.tar.bz2
+Source7:		bluecurve-gtk-themes-%{bluecurve_version}.tar.bz2
 Url:			ftp://ftp.gnome.org/pub/GNOME/sources/gtk-engines/
 
 BuildRoot:		%{_tmppath}/%{name}-%{version}-buildroot
@@ -82,8 +82,7 @@ cd gtk-flat-theme-2.0/
 %make
 cd ..
 
-cd Wonderland-%{wonderland_version}/
-%define __libtoolize /bin/true
+cd bluecurve-gtk-themes-%{bluecurve_version}/
 %configure2_5x
 %make
 cd ..
@@ -105,7 +104,7 @@ cd gtk-flat-theme-2.0/
 %makeinstall_std
 cd ..
 
-cd Wonderland-%{wonderland_version}/
+cd bluecurve-gtk-themes-%{bluecurve_version}/
 %makeinstall_std
 cd ..
 
@@ -113,8 +112,8 @@ cd ..
 rm -f $RPM_BUILD_ROOT%{_datadir}/themes/*/ICON.png \
   $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.la \
   $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.a
-
-%find_lang %pkgname
+#gw needed at build time only
+rm -rf %buildroot%_datadir/locale
 
 %clean
 [ -n "%{buildroot}" -a "%{buildroot}" != / ] && rm -rf %{buildroot}
@@ -122,7 +121,7 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/themes/*/ICON.png \
 
 #--------------------------------------------------------------------
 
-%files -f %pkgname.lang
+%files
 %defattr(-,root,root)
 %doc COPYING README
 %{_datadir}/themes/*
@@ -130,5 +129,18 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/themes/*/ICON.png \
 
 %files -n %{lib_name}
 %defattr(-,root,root)
-%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libbluecurve.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libcleanice.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libclearlooks.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libcrux-engine.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libflat.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libglide.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libhcengine.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libindustrial.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libluaengine.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libmist.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libredmond95.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libsmooth.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libthinice.so
+%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libxfce.so
 %{_libdir}/pkgconfig/*
