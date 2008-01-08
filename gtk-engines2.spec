@@ -68,6 +68,9 @@ Library files for %{name}
 %make
 
 cd gtk-engines-cleanice-%{cleanice_version}/
+libtoolize --copy --force
+aclocal
+autoconf
 %configure2_5x
 %make
 cd ..
