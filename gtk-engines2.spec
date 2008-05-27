@@ -65,7 +65,7 @@ Library files for %{name}
 %build
 
 %configure2_5x --enable-lua --enable-animation
-%make
+%make LIBS=-lm
 
 cd gtk-engines-cleanice-%{cleanice_version}/
 libtoolize --copy --force
@@ -81,8 +81,12 @@ cd gtk-xfce-engine-%{xfce_version}/
 cd ..
 
 cd gtk-flat-theme-2.0/
+libtoolize --copy --force
+aclocal
+autoconf
+automake -a -c
 %configure2_5x
-%make libflat_la_LIBADD="-lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lpango-1.0 -lcairo -lgobject-2.0 -lgmodule-2.0 -ldl -lglib-2.0"
+%make libflat_la_LIBADD="-lgtk-x11-2.0 -lgdk-x11-2.0 -lgobject-2.0 -lglib-2.0"
 cd ..
 
 cd bluecurve-gtk-themes-%{bluecurve_version}/
