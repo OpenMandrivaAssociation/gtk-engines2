@@ -19,7 +19,7 @@ License:		GPL
 Group:			System/Libraries
 BuildRequires:		libglade2.0-devel
 BuildRequires:		gtk+2-devel >= 2.6.0
-BuildRequires:		perl-XML-Parser
+BuildRequires:		intltool
 Source0:		http://ftp.gnome.org/pub/GNOME/sources/gtk-engines/%{pkgname}-%{version}.tar.bz2
 Source3:		http://prdownloads.sourceforge.net/elysium-project/gtk-engines-cleanice-%{cleanice_version}.tar.bz2
 Source4:		http://www.xfce.org/archive/xfce-4.4.0/gtk-xfce-engine-%{xfce_version}.tar.bz2
