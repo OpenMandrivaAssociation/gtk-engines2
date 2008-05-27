@@ -13,7 +13,7 @@
 
 Name:			%{pkgname}%{pkgversion}
 Summary:		Default GTK+ 2.0 theme engines
-Version:		2.14.1
+Version:		2.14.2
 Release:		%mkrel 1
 License:		GPL
 Group:			System/Libraries
@@ -82,7 +82,7 @@ cd ..
 
 cd gtk-flat-theme-2.0/
 %configure2_5x
-%make
+%make libflat_la_LIBADD="-lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lpango-1.0 -lcairo -lgobject-2.0 -lgmodule-2.0 -ldl -lglib-2.0"
 cd ..
 
 cd bluecurve-gtk-themes-%{bluecurve_version}/
