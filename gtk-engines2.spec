@@ -108,7 +108,7 @@ cd gtk-xfce-engine-%{xfce_version}/
 cd ..
 
 cd gtk-flat-theme-2.0/
-%makeinstall_std
+%makeinstall_std libflat_la_LIBADD="-lgtk-x11-2.0 -lgdk-x11-2.0 -lgobject-2.0 -lglib-2.0"
 cd ..
 
 cd bluecurve-gtk-themes-%{bluecurve_version}/
