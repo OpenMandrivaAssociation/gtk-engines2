@@ -13,7 +13,7 @@
 
 Name:			%{pkgname}%{pkgversion}
 Summary:		Default GTK+ 2.0 theme engines
-Version:		2.15.1
+Version:		2.15.2
 Release:		%mkrel 1
 License:		GPLv2+ and LGPLv2+
 Group:			System/Libraries
@@ -147,7 +147,6 @@ rm -rf %buildroot%_datadir/locale
 %{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libluaengine.so
 %{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libmist.so
 %{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libredmond95.so
-%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libsmooth.so
 %{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libthinice.so
 %{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libxfce.so
 %{_libdir}/pkgconfig/*
