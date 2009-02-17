@@ -81,10 +81,7 @@ cd gtk-xfce-engine-%{xfce_version}/
 cd ..
 
 cd gtk-flat-theme-2.0/
-libtoolize --copy --force
-aclocal
-autoconf
-automake -a -c
+autoreconf -fi
 %configure2_5x
 %make libflat_la_LIBADD="-lgtk-x11-2.0 -lgdk-x11-2.0 -lgobject-2.0 -lglib-2.0"
 cd ..
