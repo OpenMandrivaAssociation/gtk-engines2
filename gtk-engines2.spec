@@ -3,7 +3,6 @@
 %define lib_name %mklibname %{pkgname}%{pkgversion}
 
 %define cleanice_version 2.4.0
-%define xfce_version 2.6.0
 %define bluecurve_version 1.0.0
 %define mist_version 0.5
 
@@ -14,7 +13,7 @@
 Name:			%{pkgname}%{pkgversion}
 Summary:		Default GTK+ 2.0 theme engines
 Version:		2.18.1
-Release:		%mkrel 1
+Release:		%mkrel 2
 License:		GPLv2+ and LGPLv2+
 Group:			System/Libraries
 BuildRequires:		libglade2.0-devel
@@ -22,7 +21,6 @@ BuildRequires:		gtk+2-devel >= 2.6.0
 BuildRequires:		intltool
 Source0:		http://ftp.gnome.org/pub/GNOME/sources/gtk-engines/%{pkgname}-%{version}.tar.bz2
 Source3:		http://prdownloads.sourceforge.net/elysium-project/gtk-engines-cleanice-%{cleanice_version}.tar.bz2
-Source4:		http://www.xfce.org/archive/xfce-4.4.0/gtk-xfce-engine-%{xfce_version}.tar.bz2
 Source5:		http://themes.freshmeat.net/redir/gtk2flat/31385/url_tgz/gtk2flat-default.tar.bz2
 Source7:		bluecurve-gtk-themes-%{bluecurve_version}.tar.bz2
 Url:			ftp://ftp.gnome.org/pub/GNOME/sources/gtk-engines/
@@ -32,8 +30,8 @@ Requires:		%{lib_name} >= %{version}
 Conflicts:		ximian-artwork < 0.2.26-4mdk
 Conflicts:		gnome-themes <= 2.8.2-2mdk
 Conflicts:		gnome-themes-extras < 0.8.0-3mdk
-Provides:		gtk-theme-clearlooks gtk-xfce-engine
-Obsoletes:		gtk-theme-clearlooks gtk-xfce-engine
+Provides:		gtk-theme-clearlooks
+Obsoletes:		gtk-theme-clearlooks
 
 %description
 These are the graphical engines for the various GTK+ toolkit themes.
@@ -60,7 +58,7 @@ Library files for %{name}
 
 
 %prep
-%setup -q -n %{pkgname}-%{version} -a 3 -a 4 -a 5 -a 7
+%setup -q -n %{pkgname}-%{version} -a 3 -a 5 -a 7
 
 %build
 
@@ -71,11 +69,6 @@ cd gtk-engines-cleanice-%{cleanice_version}/
 libtoolize --copy --force
 aclocal
 autoconf
-%configure2_5x
-%make
-cd ..
-
-cd gtk-xfce-engine-%{xfce_version}/
 %configure2_5x
 %make
 cd ..
@@ -97,10 +90,6 @@ cd ..
 %makeinstall_std
 
 cd gtk-engines-cleanice-%{cleanice_version}/
-%makeinstall_std
-cd ..
-
-cd gtk-xfce-engine-%{xfce_version}/
 %makeinstall_std
 cd ..
 
@@ -145,5 +134,4 @@ rm -rf %buildroot%_datadir/locale
 %{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libmist.so
 %{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libredmond95.so
 %{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libthinice.so
-%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libxfce.so
 %{_libdir}/pkgconfig/*
