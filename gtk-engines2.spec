@@ -18,6 +18,7 @@ License:		GPLv2+ and LGPLv2+
 Group:			System/Libraries
 BuildRequires:		libglade2.0-devel
 BuildRequires:		gtk+2-devel >= 2.6.0
+BuildRequires:		lua-devel
 BuildRequires:		intltool
 Source0:		http://ftp.gnome.org/pub/GNOME/sources/gtk-engines/%{pkgname}-%{version}.tar.bz2
 Source3:		http://prdownloads.sourceforge.net/elysium-project/gtk-engines-cleanice-%{cleanice_version}.tar.bz2
@@ -62,7 +63,7 @@ Library files for %{name}
 
 %build
 
-%configure2_5x --enable-lua --enable-animation
+%configure2_5x --enable-lua --with-system-lua --enable-animation
 %make LIBS=-lm
 
 cd gtk-engines-cleanice-%{cleanice_version}/
