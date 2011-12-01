@@ -103,9 +103,9 @@ cd bluecurve-gtk-themes-%{bluecurve_version}/
 cd ..
 
 #remove empty files
-rm -f $RPM_BUILD_ROOT%{_datadir}/themes/*/ICON.png \
-  $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.la \
-  $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.a
+rm -f %{buildroot}%{_datadir}/themes/*/ICON.png \
+  %{buildroot}%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.la \
+  %{buildroot}%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.a
 #gw needed at build time only
 rm -rf %buildroot%_datadir/locale
 
