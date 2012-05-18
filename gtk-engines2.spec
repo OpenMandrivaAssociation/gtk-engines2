@@ -19,6 +19,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtk-engines/%{pkgname}-%{version
 Source3:	http://prdownloads.sourceforge.net/elysium-project/gtk-engines-cleanice-%{cleanice_version}.tar.bz2
 Source5:	http://themes.freshmeat.net/redir/gtk2flat/31385/url_tgz/gtk2flat-default.tar.bz2
 Source7:	bluecurve-gtk-themes-%{bluecurve_version}.tar.bz2
+Patch0:		gtk-engines-2.20.2_glib2.32.patch
 
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(gtk+-2.0)
@@ -47,6 +48,7 @@ Library files for %{name}
 
 %prep
 %setup -qn %{pkgname}-%{version} -a 3 -a 5 -a 7
+%apply_patches
 
 %build
 %configure2_5x \
