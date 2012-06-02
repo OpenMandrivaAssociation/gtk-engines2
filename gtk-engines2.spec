@@ -11,7 +11,7 @@
 Name:		%{pkgname}%{pkgversion}
 Summary:	Default GTK+ 2.0 theme engines
 Version:	2.20.2
-Release:	5
+Release:	6
 License:	GPLv2+ and LGPLv2+
 Group:		System/Libraries
 Url:		ftp://ftp.gnome.org/pub/GNOME/sources/gtk-engines/
@@ -45,6 +45,13 @@ Requires:	gtk+2.0 >= 2.9.0
 %description -n %{libname}
 Library files for %{name}
 
+%package devel
+Summary:	Pkgconfig file for %{name}
+Group:		Development/Other
+Requires:	%{name} >= %{version}
+
+%description devel
+Pkgconfig file for %{name}
 
 %prep
 %setup -qn %{pkgname}-%{version} -a 3 -a 5 -a 7
@@ -56,6 +63,7 @@ Library files for %{name}
 	--enable-lua \
 	--with-system-lua \
 	--enable-animation
+
 %make LIBS=-lm
 
 cd gtk-engines-cleanice-%{cleanice_version}/
@@ -98,8 +106,8 @@ cd ..
 #remove empty files
 rm -f %{buildroot}%{_datadir}/themes/*/ICON.png \
   %{buildroot}%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.la \
-  %{buildroot}%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.a \
-  %{buildroot}%{_libdir}/pkgconfig/*
+  %{buildroot}%{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/*.a
+
 #gw needed at build time only
 rm -rf %{buildroot}%{_datadir}/locale
 
@@ -123,3 +131,5 @@ rm -rf %{buildroot}%{_datadir}/locale
 %{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libredmond95.so
 %{_libdir}/gtk-2.0/%{gtkbinaryver}/engines/libthinice.so
 
+%files devel
+%{_libdir}/pkgconfig/*
