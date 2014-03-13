@@ -21,6 +21,7 @@ Source5:	http://themes.freshmeat.net/redir/gtk2flat/31385/url_tgz/gtk2flat-defau
 Source7:	bluecurve-gtk-themes-%{bluecurve_version}.tar.bz2
 Patch0:		gtk-engines-2.20.2_glib2.32.patch
 Patch1:		gtk-engines-automake-1.13.patch
+Patch2:		gtk-engines2-2.20.2-lua5.2.patch
 
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(gtk+-2.0)
