@@ -1,0 +1,11 @@
+--- gtk-engines-2.20.2/engines/lua/src/lua_style.c.orig	2014-03-13 12:43:53.865022175 +0000
++++ gtk-engines-2.20.2/engines/lua/src/lua_style.c	2014-03-13 12:44:06.944022794 +0000
+@@ -177,7 +177,7 @@
+ 
+ 	g_return_if_fail (style);
+ 	
+-	L = lua_open ();
++	L = luaL_newstate ();
+ 	luaopen_base (L);
+ 	luaopen_math (L);
+ 	luaopen_draw (L);
