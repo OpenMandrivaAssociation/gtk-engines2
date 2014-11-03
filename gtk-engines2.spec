@@ -1,6 +1,6 @@
 %define pkgname gtk-engines
 %define pkgversion 2
-%define libname %mklibname %{name}
+%define libname %{_lib}%{name}
 
 %define cleanice_version 2.4.0
 %define bluecurve_version 1.0.0
