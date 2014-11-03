@@ -60,8 +60,8 @@ Pkgconfig file for %{name}
 %apply_patches
 
 %build
-%configure2_5x \
-	--disable-static \
+export CC=gcc
+%configure \
 	--enable-lua \
 	--with-system-lua \
 	--enable-animation
@@ -73,21 +73,18 @@ libtoolize --copy --force
 aclocal
 autoconf
 autoreconf -fi
-%configure2_5x \
-	--disable-static
+%configure
 %make
 cd ..
 
 cd gtk-flat-theme-2.0/
 autoreconf -fi
-%configure2_5x \
-	--disable-static
+%configure
 %make libflat_la_LIBADD="-lgtk-x11-2.0 -lgdk-x11-2.0 -lgobject-2.0 -lglib-2.0"
 cd ..
 
 cd bluecurve-gtk-themes-%{bluecurve_version}/
-%configure2_5x \
-	--disable-static
+%configure
 %make
 cd ..
 
