@@ -11,7 +11,7 @@
 Summary:	Default GTK+ 2.0 theme engines
 Name:		%{pkgname}%{pkgversion}
 Version:	2.20.2
-Release:	14
+Release:	15
 License:	GPLv2+ and LGPLv2+
 Group:		System/Libraries
 Url:		ftp://ftp.gnome.org/pub/GNOME/sources/gtk-engines/
