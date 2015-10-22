@@ -6,6 +6,8 @@
 %define bluecurve_version 1.0.0
 %define mist_version 0.5
 
+%define _disable_rebuild_configure 1
+
 %define gtkbinaryver %(if $([ -x %{_bindir}/pkg-config ] && pkg-config --exists gtk+-2.0); then pkg-config --variable=gtk_binary_version gtk+-2.0; else echo 0; fi)
 
 Summary:	Default GTK+ 2.0 theme engines
