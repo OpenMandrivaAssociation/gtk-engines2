@@ -59,7 +59,7 @@ Pkgconfig file for %{name}
 
 %prep
 %setup -qn %{pkgname}-%{version} -a 3 -a 5 -a 7
-%apply_patches
+%autopatch -p1
 
 %build
 export CC=gcc
