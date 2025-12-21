@@ -25,6 +25,11 @@ Patch0:		gtk-engines-2.20.2_glib2.32.patch
 Patch1:		gtk-engines-automake-1.13.patch
 Patch2:		gtk-engines2-2.20.2-lua5.2.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(libglade-2.0)
